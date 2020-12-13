@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sud.bhatt.androidarchitecture">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidArchitecture">
-        <activity
-            android:name=".mvvm.MVVMActivity"
-            android:label="@string/title_activity_m_v_v_m"
-            android:theme="@style/Theme.AndroidArchitecture.NoActionBar"></activity>
+
+        <activity android:name=".mvvm.MVVMActivity" />
         <activity android:name=".mvp.MVPActivity" />
         <activity android:name=".mvc.MVCActivity" />
         <activity android:name=".ArchitectureActivity">
