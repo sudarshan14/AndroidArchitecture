@@ -1,8 +1,12 @@
 package sud.bhatt.androidarchitecture.model
 
+import io.reactivex.Single
 import retrofit2.http.GET
 
 interface CountryApi {
     @GET("all")
-    fun getCountries(): List<Country>
+    fun getCountries2(): String
+
+    @GET("all")
+    fun getCountries(): Single<List<Country>>
 }
