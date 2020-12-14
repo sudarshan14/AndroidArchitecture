@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 
 
-//data class Country(val name: String)
+//data class Country(@SerializedName("name") val countryName: String)
 
 class Country {
     @SerializedName("name")
