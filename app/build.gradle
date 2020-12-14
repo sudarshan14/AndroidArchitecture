@@ -32,7 +32,7 @@ android {
         jvmTarget = '1.8'
     }
 }
-def retrofitVersion ="2.9.0"
+def retrofitVersion = "2.9.0"
 def rxJavaVersion = '2.0.1'
 def lifecycleExtensionsVersion = '1.1.1'
 

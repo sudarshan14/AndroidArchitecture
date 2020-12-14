@@ -44,6 +44,7 @@ class MVPActivity : AppCompatActivity() ,CountriesPresenter.View {
             progress.visibility = View.VISIBLE
 
         }
+        presenter.getSharedPrefData()
 
 
     }
