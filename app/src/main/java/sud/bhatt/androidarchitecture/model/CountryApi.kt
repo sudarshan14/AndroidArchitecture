@@ -8,5 +8,8 @@ interface CountryApi {
     fun getCountries2(): String
 
     @GET("all")
+    fun getCountryDetails(): Single<List<CountryDetail>>
+
+    @GET("all")
     fun getCountries(): Single<List<Country>>
 }
