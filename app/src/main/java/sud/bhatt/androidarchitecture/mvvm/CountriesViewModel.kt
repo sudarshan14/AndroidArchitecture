@@ -1,26 +1,25 @@
-package sud.bhatt.androidarchitecture.mvc
+package sud.bhatt.androidarchitecture.mvvm
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import sud.bhatt.androidarchitecture.model.Country
 import sud.bhatt.androidarchitecture.model.CountryApi
+import sud.bhatt.androidarchitecture.model.CountryDetail
 import sud.bhatt.androidarchitecture.model.CountryService
 
-class CountriesController(view: MVCActivity) {
+class CountriesViewModel : ViewModel() {
 
-    private val view: MVCActivity = view
+    private val countries: MutableLiveData<MutableList<String>> = MutableLiveData()
+    private val countryError: MutableLiveData<Boolean> = MutableLiveData()
+
     private val service: CountryService = CountryService
 
     init {
-        fetchCountriesRxJava();
-    }
-
-
-    private fun fetchCountiesRetrofit() {
-        val request = service.buildService(CountryApi::class.java)
-        val call = request.getCountries2()
-//call.enque
+        fetchCountriesRxJava()
     }
 
     private fun fetchCountriesRxJava() {
@@ -35,25 +34,30 @@ class CountriesController(view: MVCActivity) {
                     if (value != null) {
                         for (country in value) {
                             countyNames.add(country.countryName.toString())
-                            view.setValues(countyNames)
-                        }
 
+                        }
+                        countries.value = countyNames
+                        countryError.value = false
                     }
                 }
 
                 override fun onError(e: Throwable?) {
-                    view.onError();
+                    countryError.value = true
                 }
             })
 
     }
 
-    fun onRefresh() {
-        fetchCountriesRxJava()
+    fun updateCountriesData() {
+        countries.value = mutableListOf("India", "Japan", "Greenland")
     }
 
-    fun getSharedPrefData():String{
-        return "Shared Pref Data"
+    fun getCountries(): LiveData<MutableList<String>> {
+
+        return countries
     }
 
+    fun getCountryError(): LiveData<Boolean> {
+        return countryError
+    }
 }

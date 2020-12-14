@@ -51,4 +51,8 @@ class CountriesPresenter(view: View) {
         fun setValues(countries: MutableList<CountryDetail>)
         fun onError()
     }
+
+    fun getSharedPrefData():String{
+        return "Shared Pref Data"
+    }
 }

@@ -49,6 +49,7 @@ class MVCActivity : AppCompatActivity() {
             progress.visibility = View.VISIBLE
 
         }
+        controller.getSharedPrefData()
 
 
 //        setValues(mutableListOf("India", "Japan", "Greenland"))
