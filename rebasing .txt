@@ -1,1 +1,1 @@
-hello rebase conflicts
+hello rebase conflicts. Conflicting code from master branch this time.
