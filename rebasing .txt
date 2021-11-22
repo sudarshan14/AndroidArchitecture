@@ -1,7 +1,4 @@
-<<<<<<< HEAD
+
 Change from another developer
 Hello from Remote Sudarshan
 Changes from sudarshan bhatt
-=======
-hello rebase conflicts. There will be rebase conflicnts now.
->>>>>>> a1badec (Revert "local: updating txt file")
