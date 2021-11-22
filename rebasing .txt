@@ -1,1 +1,1 @@
-hello rebase conflicts. There will be rebase conflicnts now.
+Change from another developer
