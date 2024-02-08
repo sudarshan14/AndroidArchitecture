@@ -19,7 +19,6 @@ class ArchitectureActivity : AppCompatActivity(), OnClickListener {
         buttonMVC.setOnClickListener(this)
         buttonMVP.setOnClickListener(this)
         buttonMVVM.setOnClickListener(this)
-
 //        buttonMVC.setOnClickListener {
 ////            val intent: Intent = Intent(this, MVCActivity::class.java)
 //            startActivity(Intent(this, MVCActivity::class.java))
