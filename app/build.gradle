@@ -8,7 +8,7 @@ android {
     compileSdkVersion 34
     defaultConfig {
         applicationId "sud.bhatt.androidarchitecture"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 34
         versionCode 1
         versionName "1.0"
@@ -48,7 +48,7 @@ dependencies {
 
     implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
-
+    implementation("com.github.sudarshan14:AndroidArchitecture:V001")
     implementation "android.arch.lifecycle:extensions:$lifecycleExtensionsVersion"
 
     testImplementation 'junit:junit:4.+'

@@ -11,8 +11,10 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         mavenLocal()
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 }
 include ':app'
 rootProject.name = "Android Architecture"
-include ':jitpack-publish-library'
