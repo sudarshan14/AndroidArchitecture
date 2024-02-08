@@ -14,7 +14,8 @@
         <activity android:name=".mvvm.MVVMActivity" />
         <activity android:name=".mvp.MVPActivity" />
         <activity android:name=".mvc.MVCActivity" />
-        <activity android:name=".ArchitectureActivity">
+        <activity android:name=".ArchitectureActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
