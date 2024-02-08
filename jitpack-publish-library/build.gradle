@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
 android {
@@ -26,6 +27,34 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+//publishing {
+//    publications {
+//        create("local-maven-library") {
+//            run {
+//                groupId = "com.amlavati"
+//                artifactId = "jitpack-maven-lib"
+//                version = "0.1"
+//                artifact(
+//                        "build/outputs/aar/localmavenlibrary-release.aar"
+//                )
+//            }
+//
+//        }
+//    }
+//}
+
+afterEvaluate {
+    android.libraryVariants.each { variant->
+        publishing.publications.create(variant.name,MavenPublication){
+            from components.findByName(variant.name)
+            groupId = "com.amlavati"
+            artifactId = "jitpack-maven-lib"
+            version = "0.0.1"
+        }
+
     }
 }
 
